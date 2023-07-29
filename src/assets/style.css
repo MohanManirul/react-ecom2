@@ -95,3 +95,14 @@ ul li{
   border-radius: 5px;
   color: #fff;
 }
+
+.cartItems{
+  border: 2px solid red;
+  border-radius: 2px;
+}
+.cartCalculation{
+  border: 2px solid rgb(148, 128, 128);
+}
+.leftRow{
+  
+}

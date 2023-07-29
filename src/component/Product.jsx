@@ -1,135 +1,35 @@
 import { Link } from "react-router-dom";
+import createCart from "../ApiCalling/createCart";
 
 
-const Product = () => {
+const Product = ({product = {}}) => {
+
+    const handleAddToCart = () => {
+        createCart(product.id)
+        .then((data) => {
+            if(data?.msg === "success"){
+                alert("The product was added to cart");
+            }
+        })
+        .catch((err) => console.log("There was an error"));
+    }
+
     return (
         <> 
             <div className="col-md-4 cardMarginBottom">
                 <div className="card">
                     <figure>
-                        <img className="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image"></img>
+                        <img className="card-img-top" src={product.image} alt={product.title}></img>
                     </figure>
 
                     <div className="card-body">
-                        <h4>iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</h4>
-                        <p className="card-text">iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</p>
-                        <b>Price: $ 160,500</b>
-                        <Link to="#" className="btn btn-primary btnRightFloat">+ Add to cart</Link>
+                        <h4>{product?.title}</h4>
+                        <p className="card-text">{product?.short_des}</p>
+                        <b>Price: ${product.price}</b>
+                        <button  className="btn btn-primary btnRightFloat" onClick={handleAddToCart}>+ Add to cart</button>
                     </div> 
                 </div>
-           </div>           
-            <div className="col-md-4 cardMarginBottom">
-                <div className="card">
-                    <figure>
-                        <img className="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image"></img>
-                    </figure>
-
-                    <div className="card-body">
-                        <h4>iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</h4>
-                        <p className="card-text">iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</p>
-                        <b>Price: $ 160,500</b>
-                        <Link to="#" className="btn btn-primary btnRightFloat">+ Add to cart</Link>
-                    </div> 
-                </div>
-           </div>           
-            <div className="col-md-4 cardMarginBottom">
-                <div className="card">
-                    <figure>
-                        <img className="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image"></img>
-                    </figure>
-
-                    <div className="card-body">
-                        <h4>iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</h4>
-                        <p className="card-text">iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</p>
-                        <b>Price: $ 160,500</b>
-                        <Link to="#" className="btn btn-primary btnRightFloat">+ Add to cart</Link>
-                    </div> 
-                </div>
-           </div>           
-            <div className="col-md-4 cardMarginBottom">
-                <div className="card">
-                    <figure>
-                        <img className="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image"></img>
-                    </figure>
-
-                    <div className="card-body">
-                        <h4>iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</h4>
-                        <p className="card-text">iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</p>
-                        <b>Price: $ 160,500</b>
-                        <Link to="#" className="btn btn-primary btnRightFloat">+ Add to cart</Link>
-                    </div> 
-                </div>
-           </div>           
-            <div className="col-md-4 cardMarginBottom">
-                <div className="card">
-                    <figure>
-                        <img className="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image"></img>
-                    </figure>
-
-                    <div className="card-body">
-                        <h4>iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</h4>
-                        <p className="card-text">iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</p>
-                        <b>Price: $ 160,500</b>
-                        <Link to="#" className="btn btn-primary btnRightFloat">+ Add to cart</Link>
-                    </div> 
-                </div>
-           </div>           
-            <div className="col-md-4 cardMarginBottom">
-                <div className="card">
-                    <figure>
-                        <img className="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image"></img>
-                    </figure>
-
-                    <div className="card-body">
-                        <h4>iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</h4>
-                        <p className="card-text">iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</p>
-                        <b>Price: $ 160,500</b>
-                        <Link to="#" className="btn btn-primary btnRightFloat">+ Add to cart</Link>
-                    </div> 
-                </div>
-           </div>           
-            <div className="col-md-4 cardMarginBottom">
-                <div className="card">
-                    <figure>
-                        <img className="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image"></img>
-                    </figure>
-
-                    <div className="card-body">
-                        <h4>iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</h4>
-                        <p className="card-text">iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</p>
-                        <b>Price: $ 160,500</b>
-                        <Link to="#" className="btn btn-primary btnRightFloat">+ Add to cart</Link>
-                    </div> 
-                </div>
-           </div>           
-            <div className="col-md-4 cardMarginBottom">
-                <div className="card">
-                    <figure>
-                        <img className="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image"></img>
-                    </figure>
-
-                    <div className="card-body">
-                        <h4>iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</h4>
-                        <p className="card-text">iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</p>
-                        <b>Price: $ 160,500</b>
-                        <Link to="#" className="btn btn-primary btnRightFloat">+ Add to cart</Link>
-                    </div> 
-                </div>
-           </div>           
-            <div className="col-md-4 cardMarginBottom">
-                <div className="card">
-                    <figure>
-                        <img className="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image"></img>
-                    </figure>
-
-                    <div className="card-body">
-                        <h4>iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</h4>
-                        <p className="card-text">iPhone 14 Pro Max iOS 16 6.7 inches Super Retina</p>
-                        <b>Price: $ 160,500</b>
-                        <Link to="#" className="btn btn-primary btnRightFloat">+ Add to cart</Link>
-                    </div> 
-                </div>
-           </div>           
+           </div>          
         </>
       
     );
