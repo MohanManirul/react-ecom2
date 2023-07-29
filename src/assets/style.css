@@ -103,6 +103,16 @@ ul li{
 .cartCalculation{
   border: 2px solid rgb(148, 128, 128);
 }
-.leftRow{
-  
+
+.main_div {
+  text-align:center;
+  position: relative;
+
+}
+.sub_div {
+  position: absolute;
+  bottom: 0px;
+}
+p {
+  margin-left:110px;
 }
